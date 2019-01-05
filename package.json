@@ -1,0 +1,24 @@
+{
+  "name": "wasm-helloworld",
+  "version": "1.0.0",
+  "description": "WASM basic demo using AssemblyScript - Add function",
+  "scripts": {
+    "asbuild:dev": "asc assembly/module.ts -b src/wasm/asmodule.wasm -t src/wasm/asmodule.wat --use Math=JSMath --importMemory --sourceMap --debug --validate --measure",
+    "asbuild": "asc assembly/module.ts -b src/wasm/asmodule.wasm -t src/wasm/asmodule.wat --use Math=JSMath -O3 --importMemory --validate --measure",
+    "build": "npm run asbuild",
+    "build:dev": "npm run asbuild:dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/goldenratio/wasm-as-helloworld.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/goldenratio/wasm-as-helloworld/issues"
+  },
+  "homepage": "https://github.com/goldenratio/wasm-as-helloworld#readme",
+  "devDependencies": {
+    "assemblyscript": "github:AssemblyScript/assemblyscript"
+  }
+}
