@@ -13,8 +13,7 @@ const importObj = {
 const wasm = WebAssembly.instantiateStreaming(fetch('./wasm/asmodule.wasm'), importObj);
 wasm
   .then(({ instance }) => {
-    const exports = instance.exports;
-    const { add } = exports;
+    const { add } = instance.exports;
     console.log(`2 + 4 = ${add(2, 4)}`);
   })
   .catch(err => {
